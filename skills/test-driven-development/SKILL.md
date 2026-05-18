@@ -70,7 +70,9 @@ digraph tdd_cycle {
 
 ### RED - Write Failing Test
 
-When the test exercises an external library API, verify the API signature via `context7:resolve-library-id` and `context7:query-docs` before writing the test assertion.
+<EXTREMELY-IMPORTANT>
+When the test exercises an external library API, you MUST verify the API signature via `context7:resolve-library-id` and `context7:query-docs` BEFORE writing the test. Testing against a hallucinated API signature wastes the entire RED-GREEN cycle. Verify first, then write the test.
+</EXTREMELY-IMPORTANT>
 
 Write one minimal test showing what should happen.
 
