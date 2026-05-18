@@ -103,10 +103,10 @@ git commit -m "feat: add specific feature"
 ```
 ````
 
-## Library API Verification — MANDATORY
+## Library API Verification
 
 <HARD-GATE>
-Before writing ANY code block that calls an external library API, you MUST use `context7:resolve-library-id` then `context7:query-docs` to verify current function signatures and usage patterns. Plans must contain real, working API calls — not assumptions from training data. This is not optional. A plan with unverified library API calls is a plan failure equivalent to a placeholder.
+Before writing code blocks in plan tasks, review what external library APIs your code will call. For each API you're about to use, ask yourself: "Am I certain this function signature is correct for the version in this project?" If there is any doubt, use `context7:resolve-library-id` then `context7:query-docs` to verify. Plans must contain real, working API calls — not assumptions from training data. A plan with incorrect library API calls is a plan failure equivalent to a placeholder.
 </HARD-GATE>
 
 ## No Placeholders

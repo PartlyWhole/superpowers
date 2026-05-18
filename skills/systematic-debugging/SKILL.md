@@ -132,7 +132,7 @@ You MUST complete each phase before proceeding to the next.
    - Don't skim - read every line
    - Understand the pattern fully before applying
 
-   **MANDATORY: API misuse check.** When the bug involves an external library, you MUST use `context7:resolve-library-id` and `context7:query-docs` to verify the API is being called correctly BEFORE investigating other hypotheses. Incorrect API usage is a top cause of bugs — rule it out first, not last.
+   **API misuse check:** When the bug involves an external library, consider whether incorrect API usage could be the cause. Think about which library calls are in the failing code path, then verify them via `context7:resolve-library-id` and `context7:query-docs`. Incorrect API usage is a common root cause — worth ruling out early.
 
 3. **Identify Differences**
    - What's different between working and broken?

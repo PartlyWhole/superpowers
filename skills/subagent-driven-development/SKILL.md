@@ -9,7 +9,7 @@ Execute plan by dispatching fresh subagent per task, with two-stage review after
 
 **Why subagents:** You delegate tasks to specialized agents with isolated context. By precisely crafting their instructions and context, you ensure they stay focused and succeed at their task. They should never inherit your session's context or history — you construct exactly what they need. This also preserves your own context for coordination work.
 
-**Library docs for subagents — MANDATORY:** When dispatching subagents for tasks involving external library APIs, you MUST include in the subagent prompt: "Before writing any code that calls a library API, use `context7:resolve-library-id` and `context7:query-docs` to verify the current API. Do NOT rely on training data for API signatures." Subagents have no session history and are the most prone to hallucinating outdated APIs. Never skip this instruction.
+**Library docs for subagents:** When dispatching subagents for tasks that touch external library APIs, include this in the subagent prompt: "Before writing code that calls a library API, think about which specific functions you'll use. For any you're uncertain about, verify via `context7:resolve-library-id` and `context7:query-docs` before writing the code." Subagents start with no session history and are especially prone to using outdated APIs — this instruction helps them self-correct.
 
 **Core principle:** Fresh subagent per task + two-stage review (spec then quality) = high quality, fast iteration
 

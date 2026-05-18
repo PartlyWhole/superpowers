@@ -22,11 +22,11 @@ Every project goes through this process. A todo list, a single-function utility,
 You MUST create a task for each of these items and complete them in order:
 
 1. **Explore project context** — check files, docs, recent commits
-2. **Look up library docs via Context7** — MANDATORY for ANY feature involving external libraries. Use `context7:resolve-library-id` to find the library, then `context7:query-docs` to fetch current API docs for the specific version in the project's package.json. Do NOT propose approaches based on training data alone — your knowledge of library APIs may be outdated or wrong.
+2. **Identify libraries and APIs to verify** — after exploring context, think: which external libraries or APIs are relevant to this feature? What specific APIs will the design depend on? List them, then for EACH one use `context7:resolve-library-id` and `context7:query-docs` to fetch current docs. Do NOT propose approaches until you've verified the APIs you'll reference actually exist and work the way you think.
 3. **Offer visual companion** (if topic will involve visual questions) — this is its own message, not combined with a clarifying question. See the Visual Companion section below.
 4. **Ask clarifying questions** — one at a time, understand purpose/constraints/success criteria
-5. **Propose 2-3 approaches** — with trade-offs and your recommendation. Every approach that references a library API MUST cite Context7 docs. If you haven't queried Context7 for a library you're recommending, STOP and query it now.
-5. **Present design** — in sections scaled to their complexity, get user approval after each section
+5. **Propose 2-3 approaches** — with trade-offs and your recommendation. Every approach that references a library API MUST be informed by Context7 docs. If you find yourself recommending an API you haven't verified, STOP and query Context7 now.
+6. **Present design** — in sections scaled to their complexity, get user approval after each section
 6. **Write design doc** — save to `docs/superpowers/specs/YYYY-MM-DD-<topic>-design.md` and commit
 7. **Spec self-review** — quick inline check for placeholders, contradictions, ambiguity, scope (see below)
 8. **User reviews written spec** — ask user to review the spec file before proceeding
@@ -81,7 +81,7 @@ digraph brainstorming {
 **Exploring approaches:**
 
 - Propose 2-3 different approaches with trade-offs
-- **MANDATORY:** Before recommending ANY library or API approach, query `context7:resolve-library-id` and `context7:query-docs` to verify the library supports the assumed features. Do NOT skip this for "well-known" libraries like React — APIs change between versions.
+- Before recommending an approach, think about which library APIs it depends on. For each one, verify via `context7:resolve-library-id` and `context7:query-docs` that the API exists and behaves as you expect — even for well-known libraries like React, since APIs change between versions.
 - Present options conversationally with your recommendation and reasoning
 - Lead with your recommended option and explain why
 
