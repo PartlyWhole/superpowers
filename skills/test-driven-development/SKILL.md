@@ -70,6 +70,8 @@ digraph tdd_cycle {
 
 ### RED - Write Failing Test
 
+When the test exercises an external library API, verify the API signature via `context7:resolve-library-id` and `context7:query-docs` before writing the test assertion.
+
 Write one minimal test showing what should happen.
 
 <Good>

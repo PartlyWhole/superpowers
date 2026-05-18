@@ -21,7 +21,7 @@ Every project goes through this process. A todo list, a single-function utility,
 
 You MUST create a task for each of these items and complete them in order:
 
-1. **Explore project context** — check files, docs, recent commits
+1. **Explore project context** — check files, docs, recent commits. When evaluating library choices, use `context7:resolve-library-id` then `context7:query-docs` to verify the library's current API supports the proposed approach at the project's installed version.
 2. **Offer visual companion** (if topic will involve visual questions) — this is its own message, not combined with a clarifying question. See the Visual Companion section below.
 3. **Ask clarifying questions** — one at a time, understand purpose/constraints/success criteria
 4. **Propose 2-3 approaches** — with trade-offs and your recommendation
@@ -80,6 +80,7 @@ digraph brainstorming {
 **Exploring approaches:**
 
 - Propose 2-3 different approaches with trade-offs
+- When approaches depend on external library capabilities, verify those capabilities via `context7:query-docs` before recommending
 - Present options conversationally with your recommendation and reasoning
 - Lead with your recommended option and explain why
 

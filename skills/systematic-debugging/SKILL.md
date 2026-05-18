@@ -131,6 +131,7 @@ You MUST complete each phase before proceeding to the next.
    - If implementing pattern, read reference implementation COMPLETELY
    - Don't skim - read every line
    - Understand the pattern fully before applying
+   - When API misuse is a possible cause, use `context7:resolve-library-id` and `context7:query-docs` to verify the API is being called correctly before investigating other hypotheses
 
 3. **Identify Differences**
    - What's different between working and broken?

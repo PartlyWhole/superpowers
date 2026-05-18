@@ -103,6 +103,10 @@ git commit -m "feat: add specific feature"
 ```
 ````
 
+## Library API Verification
+
+Before writing code blocks that call external library APIs, use `context7:resolve-library-id` then `context7:query-docs` to verify current function signatures and usage patterns. Plans must contain real, working API calls — not assumptions from training data.
+
 ## No Placeholders
 
 Every step must contain the actual content an engineer needs. These are **plan failures** — never write them:
